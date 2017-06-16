@@ -7,23 +7,30 @@
 //
 
 #import "ViewController.h"
-
-@interface ViewController ()
-
+#import "ZGLoginView.h"
+#import "ZGLoginPresenter.h"
+@interface ViewController ()<ZGLoginView>
+@property(nonatomic)ZGLoginPresenter *presenter;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.presenter=[[ZGLoginPresenter alloc]init];
+    [self.presenter attachView:self];
+    [self.presenter login:@"ZCZ" pwd:@"123456"];
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.presenter detaChView];
+    
 }
-
+-(void)onLoginReluest:(NSString *)reluest
+{
+    NSLog(@"登录返回的结果 -- %@",reluest);
+}
 
 @end

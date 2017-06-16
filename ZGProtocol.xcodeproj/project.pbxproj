@@ -13,6 +13,9 @@
 		237F1ED21EF3BF660016B9F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 237F1ED01EF3BF660016B9F4 /* Main.storyboard */; };
 		237F1ED41EF3BF660016B9F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 237F1ED31EF3BF660016B9F4 /* Assets.xcassets */; };
 		237F1ED71EF3BF660016B9F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 237F1ED51EF3BF660016B9F4 /* LaunchScreen.storyboard */; };
+		237F1EE41EF3C0310016B9F4 /* ZGHttpUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F1EE31EF3C0310016B9F4 /* ZGHttpUtils.m */; };
+		237F1EE71EF3C4650016B9F4 /* ZGLoginPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F1EE61EF3C4650016B9F4 /* ZGLoginPresenter.m */; };
+		237F1EEB1EF3C4C20016B9F4 /* ZGLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F1EEA1EF3C4C20016B9F4 /* ZGLoginModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,13 @@
 		237F1ED31EF3BF660016B9F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		237F1ED61EF3BF660016B9F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		237F1ED81EF3BF660016B9F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		237F1EE21EF3C0310016B9F4 /* ZGHttpUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGHttpUtils.h; sourceTree = "<group>"; };
+		237F1EE31EF3C0310016B9F4 /* ZGHttpUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGHttpUtils.m; sourceTree = "<group>"; };
+		237F1EE51EF3C4650016B9F4 /* ZGLoginPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGLoginPresenter.h; sourceTree = "<group>"; };
+		237F1EE61EF3C4650016B9F4 /* ZGLoginPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGLoginPresenter.m; sourceTree = "<group>"; };
+		237F1EE81EF3C4A80016B9F4 /* ZGLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGLoginView.h; sourceTree = "<group>"; };
+		237F1EE91EF3C4C20016B9F4 /* ZGLoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGLoginModel.h; sourceTree = "<group>"; };
+		237F1EEA1EF3C4C20016B9F4 /* ZGLoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGLoginModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +68,14 @@
 		237F1EC61EF3BF660016B9F4 /* ZGProtocol */ = {
 			isa = PBXGroup;
 			children = (
+				237F1EDE1EF3BFEE0016B9F4 /* Model */,
+				237F1EDF1EF3BFEE0016B9F4 /* Presenter */,
+				237F1EE01EF3BFEE0016B9F4 /* Tools */,
+				237F1EE11EF3BFEE0016B9F4 /* View */,
 				237F1ECA1EF3BF660016B9F4 /* AppDelegate.h */,
 				237F1ECB1EF3BF660016B9F4 /* AppDelegate.m */,
 				237F1ECD1EF3BF660016B9F4 /* ViewController.h */,
 				237F1ECE1EF3BF660016B9F4 /* ViewController.m */,
-				237F1ED01EF3BF660016B9F4 /* Main.storyboard */,
-				237F1ED31EF3BF660016B9F4 /* Assets.xcassets */,
-				237F1ED51EF3BF660016B9F4 /* LaunchScreen.storyboard */,
-				237F1ED81EF3BF660016B9F4 /* Info.plist */,
 				237F1EC71EF3BF660016B9F4 /* Supporting Files */,
 			);
 			path = ZGProtocol;
@@ -74,9 +84,48 @@
 		237F1EC71EF3BF660016B9F4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				237F1ED01EF3BF660016B9F4 /* Main.storyboard */,
+				237F1ED31EF3BF660016B9F4 /* Assets.xcassets */,
+				237F1ED51EF3BF660016B9F4 /* LaunchScreen.storyboard */,
+				237F1ED81EF3BF660016B9F4 /* Info.plist */,
 				237F1EC81EF3BF660016B9F4 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		237F1EDE1EF3BFEE0016B9F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				237F1EE91EF3C4C20016B9F4 /* ZGLoginModel.h */,
+				237F1EEA1EF3C4C20016B9F4 /* ZGLoginModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		237F1EDF1EF3BFEE0016B9F4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				237F1EE51EF3C4650016B9F4 /* ZGLoginPresenter.h */,
+				237F1EE61EF3C4650016B9F4 /* ZGLoginPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		237F1EE01EF3BFEE0016B9F4 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				237F1EE21EF3C0310016B9F4 /* ZGHttpUtils.h */,
+				237F1EE31EF3C0310016B9F4 /* ZGHttpUtils.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		237F1EE11EF3BFEE0016B9F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				237F1EE81EF3C4A80016B9F4 /* ZGLoginView.h */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,8 +199,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				237F1EEB1EF3C4C20016B9F4 /* ZGLoginModel.m in Sources */,
 				237F1ECF1EF3BF660016B9F4 /* ViewController.m in Sources */,
+				237F1EE71EF3C4650016B9F4 /* ZGLoginPresenter.m in Sources */,
 				237F1ECC1EF3BF660016B9F4 /* AppDelegate.m in Sources */,
+				237F1EE41EF3C0310016B9F4 /* ZGHttpUtils.m in Sources */,
 				237F1EC91EF3BF660016B9F4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
